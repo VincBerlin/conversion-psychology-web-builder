@@ -27,7 +27,11 @@
     "opt-in Playwright-rendered two-device, <=3-path observational browser audit",
     "blocking non-GET/HEAD, third-party origins, redirects, WebSockets, service workers",
     "screenshot and structured DOM evidence with NOT_TESTED for transactions and conversion impact",
-    "browser safety tests including real local Chromium DOM smoke and browser networking test pending environment"
+    "browser safety tests including real local Chromium DOM smoke and browser networking test pending environment",
+    "mandatory browser-policy oracle and mutation release gate",
+    "strict v2 mode-decision matrix and safe CTA targets",
+    "fail-closed malformed JSON with adversarial tests",
+    "v2 claim/tracking/measurement artifact references for publication, legacy migration-only"
   ],
   "preserved_core_functions": [
     "intake and scope",
@@ -55,7 +59,12 @@
     "reports/*",
     "evals/*",
     "references/security-and-tools.md",
-    "references/claude-code-installation.md"
+    "references/claude-code-installation.md",
+    "scripts/validate_browser_adapter.py",
+    "scripts/validate_release_gate.py",
+    "scripts/validate_evals.py",
+    "evals/fixtures/028-050",
+    "reports/eval-results.json"
   ],
   "added_files": [
     "references/precision-decision-engine.md",
@@ -63,11 +72,16 @@
     "references/browser-ux-audit.md",
     "scripts/browser_ux_audit.py",
     "scripts/test_browser_ux_audit.py",
-    "scripts/validate_browser_adapter.py"
+    "scripts/validate_browser_adapter.py",
+    "scripts/test_browser_policy_mutation.py",
+    "scripts/test_spec_adversarial.py",
+    "reports/audit-patch-summary.md"
   ],
-  "regression_status": "PASS_12_LEGACY_FIXTURES_BYTE_IDENTICAL_AND_PASS",
+  "regression_status": "PASS_27_ORIGINAL_FIXTURES_BYTE_IDENTICAL_AND_PASS",
   "baseline_input_zip_sha256": "ea3bd6cb5fc4d1e1aebe5be69bade7b2bb947500aa3d7ce059cad7f43e97def5",
   "baseline_source": "current user-provided skill.zip of 70 files; earlier report referenced different v1 baseline",
   "browser_mode": "OPT_IN_OBSERVATION",
-  "network_browser_e2e": "NOT_TESTED_ENVIRONMENT_ADMIN_BLOCK"
+  "network_browser_e2e": "NOT_TESTED_ENVIRONMENT_ADMIN_BLOCK",
+  "audited_baseline_zip_sha256": "9b5efc1e24906b6577404ff8db2c87f67f4680b54b56e49b7b48af91bd061252",
+  "comparison_audit_archive_sha256": "23ea930148df2258d7ebfb0d6d9f690e4f6e0e496f470de3192d97f124a860f8"
 }

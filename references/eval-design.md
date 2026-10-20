@@ -19,3 +19,10 @@ Fixtures 013–027 überprüfen den neuen v2-Contract: vorhandener Evidenzstatus
 - In einer Umgebung mit verwalteter Browsernetzwerk-Sperre wird der lokale Netzwerktest `SKIPPED` gemeldet; **keinesfalls** daraus ein erfolgreich ausgeführtes URL-Audit ableiten.
 - Zwei Zielgeräte und bis zu drei manuell festgelegte Pfade. Realer Form-Submit/Checkout bewusst `NOT_TESTED`; dafür später nur autorisierte Staging-/Mock-Tests.
 - Keine messbare Conversion-Wirkung ohne separat durchgeführte Nutzer-/Funnel-Studie.
+
+## Unabhängiger Audit-Patch (20.10.2026)
+- Negativ-Fixtures 028–050 prüfen Modusentscheidung, CTA-Schema, schädliche Ziele, typfalsche Felder, v2 Provenienzstruktur und Legacy-Migration. Alte 001–027 bleiben unverändert.
+- `scripts/test_spec_adversarial.py` prüft fehlerhafte JSON-Typen, sichere Ziele und das fail-closed Publikationsgate.
+- `scripts/test_browser_policy_mutation.py` erstellt ausschließlich im Arbeitsspeicher eine unsichere `ALLOW`-Mutation und überprüft, dass dieselben Policy-Oracles sie zurückweisen. Das Release-Gate MUSS die echte Policy ausführen, nicht nur nach Texttokens suchen.
+- `scripts/validate_browser_adapter.py` führt zwingend Browser-Policy-Tests und den Mutationstest aus; Packaging muss bei Fehlern abbrechen. Ein optionaler lokaler HTTP-Smoketest darf `SKIP` melden; er darf nie als erfolgreicher Netzwerk-Test ausgewiesen werden.
+- Artefaktpräsenz/Metadata-Labels belegen keine authentische Consent-Genehmigung, Marketingwahrheit oder Conversion-Wirkung. Echte Claude-Trigger-/Output-Evals und reale Site-E2E müssen separat erfolgen.

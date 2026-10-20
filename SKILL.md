@@ -20,7 +20,7 @@ Erstelle oder verbessere Websites so, dass passende Besucher ihre **selbstbestim
 - `references/decision-types-and-blueprints.md`: Entscheidungstypen, Awareness und adaptive Seitentemplates.
 - `references/psychology-mechanisms.md`: Mechanismenauswahl, Einsatzbedingungen, Gegenargumente.
 - `references/copy-and-interaction-system.md`: Copy, Hero, CTAs, Forms, Trust, Pricing und Design.
-- `references/design-spec-schema.md`: ausfüllbare, maschinenprüfbare Strategie-Datei.
+- `references/design-spec-schema.md`: ausfüllbare, maschinenprüfbare Strategie-Datei und Publikations-/Beleg-Gate.
 - `references/measurement-experiments.md`: Outcome, Guardrails, Testdesign und Instrumentierung.
 - `references/legal-ethical-guardrails.md`: Dark Patterns, Consent, Recht und vulnerable Zielgruppen.
 - `references/security-and-tools.md`: Arbeitsrechte, externe Services, Tracking und Repository-Grenzen.
@@ -82,12 +82,13 @@ Erstelle oder verbessere Websites so, dass passende Besucher ihre **selbstbestim
 2. Prüfe relevante Nutzerwege auf Mobile + Desktop, Tastatur, Formular/Checkout, Fehler- und Leerzustände. Optional Browser-Audit nach Workflow 1b mit **tatsächlich erzeugtem Bericht**, sonst `NOT_TESTED`. Die read-only Beobachtung **testet keine** echten Submits/Checkouts. Führe nur **zum Repository passende** Tests/Builds aus; fehlenden Zugriff offen markieren.
 3. Performance: LCP, INP, CLS *messen*, sofern verfügbar. Ziele LCP ≤2,5 s, INP ≤200 ms, CLS ≤0,1 am 75. Perzentil als Web-Vitals-Richtwerte, keine Garantie; Quelle in `source-map.md`.
 4. Qualitätsprüfung: Marketingclaim ↔ Proof, CTA ↔ **tatsächlicher erfolgreicher Outcome**, Guardrails und Gegenhypothese. Prüfe bei randomisierten Experimenten zusätzlich Zuteilung/Sample-Ratio-Mismatch, definierte Auswertung und Ausschluss fehlerhafter Events. Geschätzter Conversion-Uplift **niemals ohne Versuchsdaten**. Zahlen ohne Messung ausschließlich als `HYPOTHESIS`, nie als Ergebnisaussage.
-5. Bei bereitgestellter JSON-Strategie `python scripts/validate_design_spec.py <strategie.json>` (Pfad relativ zum installierten Skill) für deterministische Red-Flags ausführen; fachliches Review wird dadurch nicht ersetzt.
-6. Ergebnis berichten als: **Diagnose → ausgewählter Engpass → Intervention(en) → Warum nicht die Alternativen? → Change Contract → echte Codeänderungen → QA/Messstatus → nächster Test**. Nicht belegte Annahmen offenlassen. Bei `NO_CHANGE` oder `RESEARCH_FIRST` keine kosmetischen Änderungen erzwingen. **Keine behauptete Conversion-Steigerung ohne valide Messung.**
+5. Für neue Arbeitsaufträge `strategy_version: 2` und mitgelieferte JSON-Strategie nutzen; `python scripts/validate_design_spec.py <strategie.json>` prüft strukturell. **Vor jeder Freigabe zur Veröffentlichung** zusätzlich `python scripts/validate_design_spec.py <strategie.json> --publish --evidence-root <freigegebenes-verzeichnis>` ausführen. `AUDIT_ONLY`/`PLAN_ONLY` dürfen niemals `SHIP_SAFE_FIX` oder `BUILD_AND_TEST` autorisieren. Legacy-v1 ist nur zur Migration, nicht zur Veröffentlichung.
+6. Veröffentlichbare Claims, Social Proof, Verknappung und Tracking benötigen Evidenz- und Freigabe-Artefakte im genehmigten Arbeitsumfang. Der Validator prüft Referenzen/Existenz, **nicht** die Authentizität, Rechtswirksamkeit oder inhaltliche Wahrheit. Menschen müssen Inhalt, Berechtigung, Consent und Publikationskontext verifizieren; andernfalls `BLOCKED_EVIDENCE` bzw. `LEGAL_REVIEW_REQUIRED`. Externe CTA-Ziele sind standardmäßig blockiert und benötigen eine separat überprüfte Implementierungsfreigabe.
+7. Ergebnis berichten als: **Diagnose → ausgewählter Engpass → Intervention(en) → Warum nicht die Alternativen? → Change Contract → echte Codeänderungen → QA/Messstatus → nächster Test**. Nicht belegte Annahmen offenlassen. Bei `NO_CHANGE` oder `RESEARCH_FIRST` keine kosmetischen Änderungen erzwingen. **Keine behauptete Conversion-Steigerung ohne valide Messung.**
 
 ## Präzisionsregeln gegen Scheingenauigkeit
 - Kein generischer 100-Punkte-„Conversion Score“, keine universelle Reihenfolge von Sektionen und keine kontextfreie psychologische Farbzuordnung. Priorität P0–P3 ist **ordinales Arbeitsrouting**, keine statistische Effektmessung.
-- „Belegt“ bedeutet eine **geprüfte Quelle mit Veröffentlichungsrecht**, nicht nur das JSON-Flag `verified`; Skripte können Wahrheitsgehalt nicht prüfen.
+- „Belegt“ bedeutet eine **geprüfte Quelle mit Veröffentlichungsrecht**, nicht nur das JSON-Flag `verified`; Skripte können Wahrheitsgehalt nicht prüfen. `MEASURED`, `OBSERVED` und `APPROVED` sind keine selbstbestätigenden Beweise. Veröffentlichungs-Gate strikt vom reinen Planungs-Gate trennen.
 - Nicht mit „mehr CTA“ oder längeren Funnels beginnen. Wenn der Engpass z. B. im nachgelagerten Vertrieb oder im Angebot liegt, melde ihn als **NON_UI_BOTTLENECK** und baue keine irrelevante UI.
 - Bereits gute Nutzerwege nicht allein wegen eines Copywriting-Trends verändern. Berichte transparent, wenn Daten eine Entscheidung nicht tragen.
 

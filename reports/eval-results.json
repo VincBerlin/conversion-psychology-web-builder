@@ -2,10 +2,10 @@
   "skill": "conversion-psychology-web-builder",
   "mode": "UPDATE",
   "fixture_status": "PASS",
-  "fixture_count": 27,
-  "fixture_passed": 27,
+  "fixture_count": 50,
+  "fixture_passed": 50,
   "legacy_fixtures_regressed": 12,
-  "precision_fixtures_new": 15,
+  "precision_fixtures_new": 38,
   "trigger_eval_definitions": 15,
   "output_eval_definitions": 12,
   "trigger_runtime_execution": "NOT_RUN",
@@ -13,173 +13,454 @@
   "claude_runtime_e2e": "NOT_RUN",
   "website_e2e": "NOT_RUN",
   "conversion_lift_measurement": "NOT_AVAILABLE",
-  "interpretation": "Local deterministic JSON schema and policy fixtures passed; neither real Claude Code behavior nor commercial conversion outcomes were tested. Optional browser script verified by policy tests and offline Chromium DOM rendering; localhost network smoke skipped because administrator network policy blocks browser navigation.",
+  "interpretation": "50 local fixtures and 7 adversarial strategy tests pass; evidence refs only establish artifact existence, not truth; Claude behavior, browser network E2E and conversion outcomes NOT_TESTED.",
   "case_results": [
     {
       "id": "001-valid-b2b",
       "expected": "PASS",
       "actual": "PASS",
-      "passed": true
+      "passed": true,
+      "errors": []
     },
     {
       "id": "002-valid-real-claim",
       "expected": "PASS",
       "actual": "PASS",
-      "passed": true
+      "passed": true,
+      "errors": []
     },
     {
       "id": "003-block-unsupported-claim",
       "expected": "BLOCK",
       "actual": "BLOCK",
-      "passed": true
+      "passed": true,
+      "errors": [
+        "claim[0] public claim without verified source"
+      ]
     },
     {
       "id": "004-block-fake-timer",
       "expected": "BLOCK",
       "actual": "BLOCK",
-      "passed": true
+      "passed": true,
+      "errors": [
+        "pattern[0] blocked manipulation: fake_timer",
+        "pattern[0] unknown or unsafe pattern: fake_timer"
+      ]
     },
     {
       "id": "005-block-scarcity-without-source",
       "expected": "BLOCK",
       "actual": "BLOCK",
-      "passed": true
+      "passed": true,
+      "errors": [
+        "pattern[0] scarcity/urgency requires proof_source",
+        "pattern[0] scarcity requires inventory_source"
+      ]
     },
     {
       "id": "006-block-preselected-consent",
       "expected": "BLOCK",
       "actual": "BLOCK",
-      "passed": true
+      "passed": true,
+      "errors": [
+        "pattern[0] blocked manipulation: preselected_consent",
+        "pattern[0] unknown or unsafe pattern: preselected_consent"
+      ]
     },
     {
       "id": "007-block-missing-cta",
       "expected": "BLOCK",
       "actual": "BLOCK",
-      "passed": true
+      "passed": true,
+      "errors": [
+        "primary_cta needs label and target"
+      ]
     },
     {
       "id": "008-block-unrecognized-decision",
       "expected": "BLOCK",
       "actual": "BLOCK",
-      "passed": true
+      "passed": true,
+      "errors": [
+        "invalid decision_type"
+      ]
     },
     {
       "id": "009-valid-private-hypothesis",
       "expected": "PASS",
       "actual": "PASS",
-      "passed": true
+      "passed": true,
+      "errors": []
     },
     {
       "id": "010-block-countdown-expiry",
       "expected": "BLOCK",
       "actual": "BLOCK",
-      "passed": true
+      "passed": true,
+      "errors": [
+        "pattern[0] countdown requires expiry"
+      ]
     },
     {
       "id": "011-block-paid-extra",
       "expected": "BLOCK",
       "actual": "BLOCK",
-      "passed": true
+      "passed": true,
+      "errors": [
+        "pattern[0] blocked manipulation: preselected_paid_extra",
+        "pattern[0] unknown or unsafe pattern: preselected_paid_extra"
+      ]
     },
     {
       "id": "012-valid-expiring-offer",
       "expected": "PASS",
       "actual": "PASS",
-      "passed": true
+      "passed": true,
+      "errors": []
     },
     {
       "id": "013-pass-precision-v2-minimal",
       "expected": "PASS",
       "actual": "PASS",
-      "passed": true
+      "passed": true,
+      "errors": []
     },
     {
       "id": "014-pass-precision-v2-explicit-hypothesis",
       "expected": "PASS",
       "actual": "PASS",
-      "passed": true
+      "passed": true,
+      "errors": []
     },
     {
       "id": "015-pass-no-change",
       "expected": "PASS",
       "actual": "PASS",
-      "passed": true
+      "passed": true,
+      "errors": []
     },
     {
       "id": "016-pass-research-first",
       "expected": "PASS",
       "actual": "PASS",
-      "passed": true
+      "passed": true,
+      "errors": []
     },
     {
       "id": "017-block-no-counterhypothesis",
       "expected": "BLOCK",
       "actual": "BLOCK",
-      "passed": true
+      "passed": true,
+      "errors": [
+        "v2 bottleneck.alternative_explanation missing"
+      ]
     },
     {
       "id": "018-block-intervention-overload",
       "expected": "BLOCK",
       "actual": "BLOCK",
-      "passed": true
+      "passed": true,
+      "errors": [
+        "v2 maximum 3 tightly related interventions per iteration"
+      ]
     },
     {
       "id": "019-block-no-change-must-not-build",
       "expected": "BLOCK",
       "actual": "BLOCK",
-      "passed": true
+      "passed": true,
+      "errors": [
+        "v2 NO_CHANGE/BLOCK/RESEARCH_FIRST must have no authorized interventions"
+      ]
     },
     {
       "id": "020-block-unknown-evidence-experiment",
       "expected": "BLOCK",
       "actual": "BLOCK",
-      "passed": true
+      "passed": true,
+      "errors": [
+        "v2 unknown evidence cannot authorize conversion experiment"
+      ]
     },
     {
       "id": "021-block-no-validation-plan",
       "expected": "BLOCK",
       "actual": "BLOCK",
-      "passed": true
+      "passed": true,
+      "errors": [
+        "v2 expert hypothesis needs concrete validation_plan"
+      ]
     },
     {
       "id": "022-block-unknown-pattern",
       "expected": "BLOCK",
       "actual": "BLOCK",
-      "passed": true
+      "passed": true,
+      "errors": [
+        "pattern[0] unknown or unsafe pattern: deceptive_autoselect"
+      ]
     },
     {
       "id": "023-block-no-falsifier",
       "expected": "BLOCK",
       "actual": "BLOCK",
-      "passed": true
+      "passed": true,
+      "errors": [
+        "v2 intervention[0].falsifier missing"
+      ]
     },
     {
       "id": "024-block-vanity-metric",
       "expected": "BLOCK",
       "actual": "BLOCK",
-      "passed": true
+      "passed": true,
+      "errors": [
+        "v2 intervention[0] vanity metric instead of declared conversion"
+      ]
     },
     {
       "id": "025-block-empty-build",
       "expected": "BLOCK",
       "actual": "BLOCK",
-      "passed": true
+      "passed": true,
+      "errors": [
+        "v2 build/fix decision needs an intervention"
+      ]
     },
     {
       "id": "026-block-unknown-schema-version",
       "expected": "BLOCK",
       "actual": "BLOCK",
-      "passed": true
+      "passed": true,
+      "errors": [
+        "unknown strategy_version; omit only for read-only legacy v1 or use 2"
+      ]
     },
     {
       "id": "027-block-fake-social-proof",
       "expected": "BLOCK",
       "actual": "BLOCK",
-      "passed": true
+      "passed": true,
+      "errors": [
+        "claim[0] public claim without verified source",
+        "claim[0] v2 published claim requires evidence_ref and approval_ref",
+        "pattern[0] v2 urgency requires evidence_ref and approval_ref"
+      ]
+    },
+    {
+      "id": "028-block-audit-build",
+      "expected": "BLOCK",
+      "actual": "BLOCK",
+      "passed": true,
+      "errors": [
+        "v2 AUDIT_ONLY/PLAN_ONLY cannot authorize build or ship"
+      ]
+    },
+    {
+      "id": "029-block-plan-build",
+      "expected": "BLOCK",
+      "actual": "BLOCK",
+      "passed": true,
+      "errors": [
+        "v2 AUDIT_ONLY/PLAN_ONLY cannot authorize build or ship"
+      ]
+    },
+    {
+      "id": "030-block-javascript-cta",
+      "expected": "BLOCK",
+      "actual": "BLOCK",
+      "passed": true,
+      "errors": [
+        "primary_cta unsafe or external target (requires separate approval)"
+      ]
+    },
+    {
+      "id": "031-block-external-cta",
+      "expected": "BLOCK",
+      "actual": "BLOCK",
+      "passed": true,
+      "errors": [
+        "primary_cta unsafe or external target (requires separate approval)"
+      ]
+    },
+    {
+      "id": "032-block-protocol-relative-cta",
+      "expected": "BLOCK",
+      "actual": "BLOCK",
+      "passed": true,
+      "errors": [
+        "primary_cta unsafe or external target (requires separate approval)"
+      ]
+    },
+    {
+      "id": "033-block-blank-guardrail",
+      "expected": "BLOCK",
+      "actual": "BLOCK",
+      "passed": true,
+      "errors": [
+        "nonempty string guardrail_metrics required"
+      ]
+    },
+    {
+      "id": "034-block-typed-guardrail",
+      "expected": "BLOCK",
+      "actual": "BLOCK",
+      "passed": true,
+      "errors": [
+        "nonempty string guardrail_metrics required"
+      ]
+    },
+    {
+      "id": "035-block-typed-mode",
+      "expected": "BLOCK",
+      "actual": "BLOCK",
+      "passed": true,
+      "errors": [
+        "invalid mode"
+      ]
+    },
+    {
+      "id": "036-block-typed-evidence",
+      "expected": "BLOCK",
+      "actual": "BLOCK",
+      "passed": true,
+      "errors": [
+        "v2 evidence_level missing/invalid"
+      ]
+    },
+    {
+      "id": "037-block-typed-decision",
+      "expected": "BLOCK",
+      "actual": "BLOCK",
+      "passed": true,
+      "errors": [
+        "v2 decision missing/invalid"
+      ]
+    },
+    {
+      "id": "038-block-typed-pattern",
+      "expected": "BLOCK",
+      "actual": "BLOCK",
+      "passed": true,
+      "errors": [
+        "pattern[0] type missing"
+      ]
+    },
+    {
+      "id": "039-block-obfuscated-vanity",
+      "expected": "BLOCK",
+      "actual": "BLOCK",
+      "passed": true,
+      "errors": [
+        "v2 intervention[0] vanity metric instead of declared conversion"
+      ]
+    },
+    {
+      "id": "040-block-v2-claim-no-provenance",
+      "expected": "BLOCK",
+      "actual": "BLOCK",
+      "passed": true,
+      "errors": [
+        "claim[0] v2 published claim requires evidence_ref and approval_ref"
+      ]
+    },
+    {
+      "id": "041-block-v2-claim-fake-type",
+      "expected": "BLOCK",
+      "actual": "BLOCK",
+      "passed": true,
+      "errors": [
+        "claim[0] invalid verification_status",
+        "claim[0] public claim without verified source",
+        "claim[0] v2 published claim requires evidence_ref and approval_ref"
+      ]
+    },
+    {
+      "id": "042-block-v2-tracking-no-approval",
+      "expected": "BLOCK",
+      "actual": "BLOCK",
+      "passed": true,
+      "errors": [
+        "v2 APPROVED tracking needs tracking_approval_ref"
+      ]
+    },
+    {
+      "id": "043-block-v2-measured-no-baseline",
+      "expected": "BLOCK",
+      "actual": "BLOCK",
+      "passed": true,
+      "errors": [
+        "v2 MEASURED baseline needs baseline_evidence_ref"
+      ]
+    },
+    {
+      "id": "044-block-v2-scarcity-no-approval",
+      "expected": "BLOCK",
+      "actual": "BLOCK",
+      "passed": true,
+      "errors": [
+        "pattern[1] v2 urgency requires evidence_ref and approval_ref"
+      ]
+    },
+    {
+      "id": "045-block-v2-legacy-ambiguous",
+      "expected": "BLOCK",
+      "actual": "BLOCK",
+      "passed": true,
+      "errors": [
+        "precision fields require strategy_version: 2"
+      ]
+    },
+    {
+      "id": "046-block-invalid-version-bool",
+      "expected": "BLOCK",
+      "actual": "BLOCK",
+      "passed": true,
+      "errors": [
+        "unknown strategy_version; omit only for read-only legacy v1 or use 2"
+      ]
+    },
+    {
+      "id": "047-block-broken-intervention",
+      "expected": "BLOCK",
+      "actual": "BLOCK",
+      "passed": true,
+      "errors": [
+        "v2 intervention[1] must be object"
+      ]
+    },
+    {
+      "id": "048-pass-audit-no-change",
+      "expected": "PASS",
+      "actual": "PASS",
+      "passed": true,
+      "errors": []
+    },
+    {
+      "id": "049-block-bad-cta-encoded-path",
+      "expected": "BLOCK",
+      "actual": "BLOCK",
+      "passed": true,
+      "errors": [
+        "primary_cta unsafe or external target (requires separate approval)"
+      ]
+    },
+    {
+      "id": "050-block-v2-invalid-expiry",
+      "expected": "BLOCK",
+      "actual": "BLOCK",
+      "passed": true,
+      "errors": [
+        "pattern[1] expiry must be ISO timestamp with timezone"
+      ]
     }
   ],
   "browser_static_policy_test_results": "5/5 PASS",
   "browser_synthetic_render_test_results": "1/1 PASS in Chromium without network",
   "browser_network_smoke_test": "SKIPPED_ADMIN_BLOCKED",
-  "browser_target_site_test": "NOT_RUN_NO_TARGET"
+  "browser_target_site_test": "NOT_RUN_NO_TARGET",
+  "browser_policy_mutation_gate": "PASS_TESTED_UNSAFE_MUTATION_REJECTED",
+  "strategy_adversarial_unittests": "PASS_7_TESTS",
+  "browser_network_e2e": "NOT_TESTED_ENVIRONMENT_RESTRICTED"
 }

@@ -27,3 +27,9 @@ Der bestehende Funktionsumfang bleibt erhalten. Neu sind `references/precision-d
 
 ## Optional: Browsergestützte UX-Prüfung
 Der Skill enthält `scripts/browser_ux_audit.py` als **opt-in Read-only-intended** Playwright-Adapter. Er macht maximal sechs Beobachtungen (maximal drei ausdrücklich erlaubte Pfade × Desktop/Mobile), liefert JSON und First-Viewport-Screenshots; kein Crawl, keine Login-, Formular-, Bestell- oder Consent-Aktionen. Netzwerk-Schreibmethoden und Weiterleitungen werden blockiert, GET-Nebenwirkungen bleiben ein Restrisiko. Siehe `references/browser-ux-audit.md`. Ohne Playwright oder Browser bleibt `REPO_ONLY` möglich.
+
+## Security-/Reliability-Patch (20.10.2026)
+- 50 strukturelle Strategie-Fixtures inklusive 23 zusätzlicher Negativ-/Positivtests.
+- Release stoppt bei unsicherer Browser-Policy; der Packager führt Policy- und adversarielle Unit-Tests zwingend aus.
+- Für publikationsfähige v2-Strategien: `python scripts/validate_design_spec.py spec.json --publish --evidence-root /freigegebenes/belege-verzeichnis`. `verified` ist kein überprüfter Wahrheitsnachweis; statische Prüfungen zertifizieren keine Rechtskonformität.
+- Ein echter Claude Code E2E-Lauf und eine nachgewiesene Conversion-Steigerung sind weiterhin **NOT_TESTED**.

@@ -1,0 +1,46 @@
+{
+  "_expected": "BLOCK",
+  "project": "Fiktives Demo-Projekt (keine echten Kundendaten)",
+  "mode": "BUILD",
+  "decision_type": "hochriskant",
+  "audience": "lokale Betriebe",
+  "primary_conversion": "qualified_consultation_request",
+  "primary_cta": {
+    "label": "Erstgespräch anfragen",
+    "target": "//evil.example/"
+  },
+  "baseline_status": "BASELINE_MISSING",
+  "claims": [],
+  "patterns": [
+    {
+      "type": "plain_language",
+      "purpose": "klare Kategorie"
+    }
+  ],
+  "guardrail_metrics": [
+    "lead_quality",
+    "complaint_rate"
+  ],
+  "tracking_status": "NOT_CONFIGURED",
+  "strategy_version": 2,
+  "evidence_level": "QUALITATIVE",
+  "decision": "BUILD_AND_TEST",
+  "bottleneck": {
+    "funnel_step": "understanding",
+    "problem": "Servicekategorie unklar",
+    "evidence": "2 beobachtete First-Click-Missverständnisse (fiktiver Fixture-Fall)",
+    "alternative_explanation": "Traffic-Quelle liefert unpassende Zielgruppe"
+  },
+  "interventions": [
+    {
+      "id": "I-1",
+      "user_problem": "Kategorie unklar",
+      "mechanism": "processing_fluency",
+      "minimal_change": "Headline überarbeiten",
+      "metric": "qualified_leads_per_eligible_visitor",
+      "falsifier": "Verständnis erhöht sich ohne geeignete Leads",
+      "rollback": "Headline revert",
+      "priority": "P1"
+    }
+  ]
+}

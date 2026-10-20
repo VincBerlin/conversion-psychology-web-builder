@@ -163,5 +163,16 @@
     "limitations": "Not a proof of conversion, legal compliance or security isolation",
     "confidence_default": 3,
     "status": "static_and_synthetic_tests_only"
+  },
+  {
+    "id": "AUDIT-USER-001",
+    "type": "user_provided",
+    "title": "Independent software audit package supplied 20.10.2026",
+    "url": "reports/audit-patch-summary.md",
+    "purpose": "Audit findings and reproduced regressions behind this security patch",
+    "reliability": "user-provided audit, findings independently reproduced where recorded",
+    "limitations": "No customer E2E or audited production environment; numerical claims from audit not treated as automatically true",
+    "confidence_default": 3,
+    "status": "partially_reproduced_locally"
   }
 ]

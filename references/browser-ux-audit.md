@@ -63,3 +63,6 @@ Wenn ein Report `PARTIAL`/`NOT_TESTED` meldet, nicht mit scheinbar vollständige
 - Playwright Python Network Interception: https://playwright.dev/python/docs/network
 - Browser Context (inkl. WebSocket interception): https://playwright.dev/python/docs/api/class-browsercontext
 - Primärquellen sagen **nichts** darüber aus, dass der konkrete Skill reale Conversion verbessert.
+
+## Audit-Patch – verifiziertes Sicherheitsgate
+`validate_browser_adapter.py` führt jetzt echte Policy-Oracles und einen isolierten Test mit einer absichtlich unsicheren `ALLOW`-Mutation aus. Ein Paketrelease ist verboten, falls die echte Policy POST/PUT/PATCH/DELETE, fremde Origins oder nicht-HTTP-URLs zulässt. Statische Schlüsselwort-Suche allein gilt nicht als Nachweis. Für tatsächliche Browser-Netzwerksicherheit weiterhin Staging/Container-Netzwerkisolation und separate genehmigte Tests verwenden.

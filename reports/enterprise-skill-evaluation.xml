@@ -3,13 +3,13 @@
   <scores>
     <spec_compliance>5</spec_compliance>
     <research_quality>4</research_quality>
-    <enterprise_readiness>4</enterprise_readiness>
+    <enterprise_readiness>3</enterprise_readiness>
     <architecture_quality>5</architecture_quality>
     <release_gate_integrity>4</release_gate_integrity>
   </scores>
-  <evidence>27 of 27 local policy fixtures passed and legacy fixtures preserved; optional browser adapter passed 5 policy tests plus synthetic Chromium DOM/screenshot test, while network smoke was skipped due to administrator restriction. Scores are assessor judgments, not independent runtime measurements.</evidence>
+  <evidence>50/50 JSON policy fixtures (27 prior unchanged), 7/7 adversarial strategy tests, 2/2 mutation-oracle tests and 5/5 browser policy tests. A deliberately unsafe policy copy was rejected by the real packager. Offline browser DOM/screenshot succeeded; network smoke skipped due to administrator restriction. Scores are assessor judgments, not independent runtime measurements.</evidence>
   <blockers>No static packaging blocker. Live browser network routing and real Claude Code integration remain untested; conversion uplift unmeasured.</blockers>
-  <revisions>Preserved the precision engine and added bounded, opt-in Playwright browser observation with origin, method, redirect and WebSocket blocks, explicit NOT_TESTED interaction states and safety regression checks.</revisions>
+  <revisions>Preserved the existing precision engine and browser observation; hardened executable browser release gate, v2 mode/decision matrix, CTA schemes, typed JSON validation, publication evidence artifact references and negative regression tests.</revisions>
   <decision>PASS</decision>
-  <reason>Static artifact is coherent and validates locally; do not interpret as proven business uplift or production site readiness.</reason>
+  <reason>Static and adversarial unit tests pass; runtime, legal truth, browser network isolation and measured business impact remain unverified.</reason>
 </enterprise_skill_evaluation>

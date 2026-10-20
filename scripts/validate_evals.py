@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Validate evaluation metadata and execute deterministic fixture suite."""
 import json
+import subprocess
 import sys
 from pathlib import Path
 from run_fixture_evals import evaluate
@@ -20,6 +21,9 @@ def check(root):
     for i,x in enumerate(triggers):
         if any(field not in x for field in ('query','should_trigger','reason')):
             problems.append(f'trigger eval {i} incomplete')
+    result=subprocess.run([sys.executable,'-m','unittest','-v','test_spec_adversarial'], cwd=root/'scripts', capture_output=True,text=True,timeout=35)
+    if result.returncode or 'OK' not in result.stderr or 'skipped=' in result.stderr:
+        problems.append('adversarial unit suite fails: '+result.stderr[-700:])
     rows=evaluate(root)
     if len(rows)<6 or any(not row['passed'] for row in rows):
         problems.append('fixture evals fail')

@@ -3,24 +3,24 @@
   "mode": "UPDATE",
   "architecture_gate": {
     "status": "PASS_WITH_ASSUMPTIONS",
-    "chosen": "existing Claude Code skill + one optional bounded Python Playwright observational adapter and progressively disclosed browser reference",
+    "chosen": "Minimal security and contract patch to existing Claude Code skill; no new browser capability or website rewrite.",
     "alternatives": [
       "Browser MCP alone (rejected: inconsistent permissions and less reproducible, MCP optional later)",
       "full-page crawler (rejected: excessive scope and side effects)",
       "no browser adapter (rejected: no rendered viewport observation)"
     ],
     "rationale": "Bottleneck-first routing and explicit zero-change outcome give a compact, contextual workflow.",
-    "strongest_counterargument": "JavaScript and GET can still have effects, and browser network routing cannot replace container network isolation. Only public/staging authorized targets; real network smoke blocked by current runner policy."
+    "strongest_counterargument": "Unit and mutation gates cannot protect against all untrusted web execution; publication evidence files can be fabricated; no Claude Code or real-site E2E."
   },
   "release_gate": {
     "status": "PASS",
     "allowed_to_package": true,
     "scope": "static_artifact_release_only",
-    "browser_network_e2e": "NOT_TESTED_ENVIRONMENT_ADMIN_BLOCK"
+    "browser_network_e2e": "NOT_TESTED_ENVIRONMENT_RESTRICTED"
   },
   "craftsmanship_gate": {
     "status": "PASS",
-    "scope_and_disclosure": "preserved four modes, existing decision engine and spec; opt-in browser reference/scripts only when requested",
+    "scope_and_disclosure": "Preserved 4 modes and previous behavior; added v2 publication gate, strict CTA targets and executable browser security checks.",
     "failure_mode_chain": "arbitrary remote browsing -> GET or JS side effects, leaked content, unapproved scope -> mitigated by localhost default, explicit HTTPS opt-in, no clicks, method/origin/redirect/WebSocket blocks, no session profile and NOT_TESTED where interactions needed"
   },
   "anti_confabulation_gate": {
@@ -37,7 +37,7 @@
   },
   "security_gate": {
     "status": "PASS",
-    "boundary": "Opt-in public or local staging, 3 paths maximum, unauthenticated incognito context, no third-party requests, network write/redirect/WebSocket blocks; not a sandbox, GET risks explicitly stated"
+    "boundary": "Mandatory executed policy and mutation tests; local/remote observational limits unchanged; no network sandbox."
   },
   "anti_sycophancy": {
     "score": 1,
@@ -58,9 +58,9 @@
   },
   "eval_gate": {
     "status": "PASS",
-    "scope": "27/27 existing policy fixtures and 9 static validators plus browser policy/synthetic tests; network localhost navigation blocked by runtime admin policy"
+    "scope": "50/50 policy fixtures, 7 spec adversarial tests, mandatory browser policy+mutation tests and 9 validators; no Claude runtime or remote browser E2E."
   },
-  "runtime_acceptance": "BROWSER_NETWORK_NOT_TESTED",
+  "runtime_acceptance": "NOT_TESTED",
   "assumptions": [
     "Python 3 used only for optional local tests",
     "Claude Code custom skills loaded from skill folder according to checked official docs",
@@ -78,12 +78,15 @@
     "Real Claude Code runtime with Playwright and an authorized staging URL for network E2E and user-path QA"
   ],
   "known_limits": [
-    "No real Claude Code runtime tests",
-    "No browser/website usability testing performed",
-    "Schema validator does not validate external marketing claims or legal compliance",
     "Browser routing has no absolute read-only guarantee; GET JS side effects possible",
     "CDN cross-origin resources blocked may differ from public site appearance",
+    "Chromium localhost network smoke blocked by current runner admin policy",
+    "Mandatory negative policy tests do not substitute for network isolation",
+    "No browser/website usability testing performed",
     "No interaction click/submit/checkout coverage in observational adapter",
-    "Chromium localhost network smoke blocked by current runner admin policy"
+    "No real Claude Code E2E or conversion uplift observed",
+    "No real Claude Code runtime tests",
+    "Publication file presence cannot establish source authenticity or legal approval",
+    "Schema validator does not validate external marketing claims or legal compliance"
   ]
 }

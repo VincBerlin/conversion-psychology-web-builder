@@ -1,0 +1,81 @@
+{
+  "scope": "local static and unit tests only",
+  "results": [
+    {
+      "command": "/opt/pyvenv/bin/python scripts/run_fixture_evals.py",
+      "returncode": 0,
+      "stdout_tail": "y-metric → BLOCK\nPASS: 025-block-empty-build → BLOCK\nPASS: 026-block-unknown-schema-version → BLOCK\nPASS: 027-block-fake-social-proof → BLOCK\nPASS: 028-block-audit-build → BLOCK\nPASS: 029-block-plan-build → BLOCK\nPASS: 030-block-javascript-cta → BLOCK\nPASS: 031-block-external-cta → BLOCK\nPASS: 032-block-protocol-relative-cta → BLOCK\nPASS: 033-block-blank-guardrail → BLOCK\nPASS: 034-block-typed-guardrail → BLOCK\nPASS: 035-block-typed-mode → BLOCK\nPASS: 036-block-typed-evidence → BLOCK\nPASS: 037-block-typed-decision → BLOCK\nPASS: 038-block-typed-pattern → BLOCK\nPASS: 039-block-obfuscated-vanity → BLOCK\nPASS: 040-block-v2-claim-no-provenance → BLOCK\nPASS: 041-block-v2-claim-fake-type → BLOCK\nPASS: 042-block-v2-tracking-no-approval → BLOCK\nPASS: 043-block-v2-measured-no-baseline → BLOCK\nPASS: 044-block-v2-scarcity-no-approval → BLOCK\nPASS: 045-block-v2-legacy-ambiguous → BLOCK\nPASS: 046-block-invalid-version-bool → BLOCK\nPASS: 047-block-broken-intervention → BLOCK\nPASS: 048-pass-audit-no-change → PASS\nPASS: 049-block-bad-cta-encoded-path → BLOCK\nPASS: 050-block-v2-invalid-expiry → BLOCK\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "/opt/pyvenv/bin/python -m unittest discover -s scripts -p test_*.py -v",
+      "returncode": 0,
+      "stdout_tail": "",
+      "stderr_tail": "ngerous_ctas (test_spec_adversarial.SpecAdversarialTests.test_dangerous_ctas) ... ok\ntest_empty_and_wrong_types_are_controlled_errors (test_spec_adversarial.SpecAdversarialTests.test_empty_and_wrong_types_are_controlled_errors) ... ok\ntest_legacy_no_publication (test_spec_adversarial.SpecAdversarialTests.test_legacy_no_publication) ... ok\ntest_valid_v2_baseline (test_spec_adversarial.SpecAdversarialTests.test_valid_v2_baseline) ... ok\n\n----------------------------------------------------------------------\nRan 16 tests in 2.662s\n\nOK (skipped=1)\n"
+    },
+    {
+      "command": "/opt/pyvenv/bin/python -m compileall -q scripts",
+      "returncode": 0,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "command": "/opt/pyvenv/bin/python scripts/quick_validate.py .",
+      "returncode": 0,
+      "stdout_tail": "PASS: structure + frontmatter\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "/opt/pyvenv/bin/python scripts/validate_source_map.py .",
+      "returncode": 0,
+      "stdout_tail": "PASS: source map & policy\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "/opt/pyvenv/bin/python scripts/validate_evals.py .",
+      "returncode": 0,
+      "stdout_tail": "PASS: eval metadata & fixture execution\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "/opt/pyvenv/bin/python scripts/validate_release_gate.py .",
+      "returncode": 0,
+      "stdout_tail": "PASS: scoped release gate\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "/opt/pyvenv/bin/python scripts/validate_installability.py .",
+      "returncode": 0,
+      "stdout_tail": "PASS: distributable structure\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "/opt/pyvenv/bin/python scripts/validate_agent_agnostic.py .",
+      "returncode": 0,
+      "stdout_tail": "PASS: scoped agent compatibility\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "/opt/pyvenv/bin/python scripts/validate_core_parity.py .",
+      "returncode": 0,
+      "stdout_tail": "PASS: declared static core preservation + legacy fixture presence\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "/opt/pyvenv/bin/python scripts/validate_no_placeholders.py .",
+      "returncode": 0,
+      "stdout_tail": "PASS: no unresolved placeholders\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "/opt/pyvenv/bin/python scripts/validate_browser_adapter.py .",
+      "returncode": 0,
+      "stdout_tail": "PASS: browser security enforced + mutation rejected\n",
+      "stderr_tail": ""
+    }
+  ],
+  "safe_policy_mutation_packaging": "FAILED_AS_EXPECTED (separate poisoned copy, exit 1; no archive)",
+  "claude_code_e2e": "NOT_RUN",
+  "browser_network_e2e": "SKIPPED_ENV_ADMIN_BLOCK",
+  "conversion_lift": "NOT_MEASURED"
+}

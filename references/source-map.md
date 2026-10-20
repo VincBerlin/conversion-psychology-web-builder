@@ -25,3 +25,5 @@ Vollständige strukturierte Referenzen: `source-map.json`.
 - `SRC-PLAY-NET-004` · `primary` · Playwright Python Network, https://playwright.dev/python/docs/network · Confidence 5 für API-Funktionsweise; wichtige Grenze: normale `route.continue_()`-Weiterleitungen rufen den Request-Handler nicht bei jeder Weiterleitung neu auf.
 - `SRC-PLAY-CTX-005` · `primary` · Playwright BrowserContext, https://playwright.dev/python/docs/api/class-browsercontext · Confidence 5; WebSocket-Routing ab Playwright 1.48 dokumentiert.
 - `DERIVED-BROWSER-001` · `derived` · Begrenzter Python-Adapter und heuristic findings; kein wissenschaftlicher Nachweis oder garantierte Sicherheitsisolation.
+
+- `AUDIT-USER-001` · `user_provided` · unabhängiges Audit-Archiv 20.10.2026 · Confidence 3 für ungeprüfte Behauptungen; kritische Policy-Mutation und Mode-/CTA-/Type-Fehler wurden lokal nachgestellt und korrigiert. Details `reports/audit-patch-summary.md`.
