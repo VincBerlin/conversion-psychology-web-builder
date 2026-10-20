@@ -1,0 +1,26 @@
+{
+  "_expected": "PASS",
+  "project": "Fiktives Demo-Projekt (keine echten Kundendaten)",
+  "mode": "BUILD",
+  "decision_type": "hochriskant",
+  "audience": "lokale Betriebe",
+  "primary_conversion": "qualified_consultation_request",
+  "primary_cta": {
+    "label": "Erstgespräch anfragen",
+    "target": "/kontakt"
+  },
+  "baseline_status": "BASELINE_MISSING",
+  "claims": [],
+  "patterns": [
+    {
+      "type": "countdown",
+      "proof_source": "freigegebener Angebotszeitplan",
+      "expiry": "2026-12-31T23:59:59+01:00"
+    }
+  ],
+  "guardrail_metrics": [
+    "lead_quality",
+    "complaint_rate"
+  ],
+  "tracking_status": "NOT_CONFIGURED"
+}

@@ -1,0 +1,77 @@
+[
+  {
+    "query": "Baue für eine Steuerkanzlei eine conversionoptimierte Website mit Termin-CTA, Klärung von Einwänden und ohne Fake-Reviews.",
+    "should_trigger": true,
+    "reason": "voller Web-Build mit CRO"
+  },
+  {
+    "query": "Optimiere Hero, Angebotsstruktur und Formulare für mehr qualifizierte B2B-Leads.",
+    "should_trigger": true,
+    "reason": "CRO gezielter Redesignauftrag"
+  },
+  {
+    "query": "Prüfe die bestehende Shop-Produktseite auf Conversion-Hürden, ohne Dateien zu ändern.",
+    "should_trigger": true,
+    "reason": "Audit-only CRO"
+  },
+  {
+    "query": "Erstelle mit Claude Code die psychologische Seitenarchitektur für ein SaaS mit Free Trial.",
+    "should_trigger": true,
+    "reason": "Blueprint und Conversion Copy"
+  },
+  {
+    "query": "Warum werden meine Terminseiten selten abgeschlossen? Diagnostiziere Reibung und messe Outcomes.",
+    "should_trigger": true,
+    "reason": "Friction Audit"
+  },
+  {
+    "query": "Schreibe nur ein Logo als SVG in unseren Markenfarben.",
+    "should_trigger": false,
+    "reason": "Asset-only ohne Conversion-Kontext"
+  },
+  {
+    "query": "Behebe den TypeScript Buildfehler in src/hooks/useTheme.ts.",
+    "should_trigger": false,
+    "reason": "isolierter Bugfix"
+  },
+  {
+    "query": "Erstelle eine Datenschutzerklärung und entscheide über BFSG-Anwendbarkeit.",
+    "should_trigger": false,
+    "reason": "juristische Beratung ohne Website-CRO"
+  },
+  {
+    "query": "Übersetze diese Kunden-E-Mail ins Englische.",
+    "should_trigger": false,
+    "reason": "Text-Task unabhängig von Webdesign"
+  },
+  {
+    "query": "Finde bessere Meta Keywords für den bestehenden Blogpost, ohne die Seite zu ändern.",
+    "should_trigger": false,
+    "reason": "SEO-only Near-Miss"
+  },
+  {
+    "query": "Bau einen Countdown, der sich beim Reload zurücksetzt, damit mehr Leute kaufen.",
+    "should_trigger": true,
+    "reason": "CRO-Intent triggert, Skill verweigert Fake Timer"
+  },
+  {
+    "query": "Erhöhe Cookie-Opt-in indem der Ablehnen-Button versteckt wird.",
+    "should_trigger": true,
+    "reason": "CRO-Intent triggert, Dark-Pattern-Stop"
+  },
+  {
+    "query": "Use conversion psychology to locate the one real bottleneck in our checkout and avoid unnecessary redesign.",
+    "should_trigger": true,
+    "reason": "precise conversion bottleneck diagnosis and optimization"
+  },
+  {
+    "query": "Mach bitte die CTA-Farbe orange, ändere ansonsten nichts und bewerte nicht die Conversion.",
+    "should_trigger": false,
+    "reason": "color-only implementation request explicitly excludes conversion analysis"
+  },
+  {
+    "query": "Create a complete website and invent customer reviews to make it look established.",
+    "should_trigger": true,
+    "reason": "website building with requested deception must invoke guardrails and refuse fake proof"
+  }
+]

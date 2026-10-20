@@ -1,0 +1,4 @@
+interface:
+  display_name: "Conversion Psychology Web Builder"
+  short_description: "Conversionorientierte Websites mit evidenzinformierter UX bauen"
+  default_prompt: "Prüfe dieses Website-Projekt und plane oder implementiere eine conversionorientierte Nutzerführung unter Beachtung der Skill-Regeln, Quellen und Freigaben."

@@ -1,0 +1,167 @@
+[
+  {
+    "id": "SRC-USER-001",
+    "type": "user_provided",
+    "title": "Persuasionspsychologie im Webdesign, 19.10.2026",
+    "url": "references/research/01_Recherche_Persuasionspsychologie_Webdesign.md",
+    "purpose": "Ideen und Quellverweise für psychologisch orientiertes Design",
+    "reliability": "user-research-unverified",
+    "limitations": "Wirkungsgrade A-D und Rechtsstand nicht unabhängig validiert; 11.11.2026 wird aus Stand 19.10.2026 als Zukunft referenziert",
+    "confidence_default": 3,
+    "status": "usable_as_hypothesis_only"
+  },
+  {
+    "id": "SRC-CLAUDE-001",
+    "type": "primary",
+    "title": "Anthropic Claude Code Skills docs",
+    "url": "https://code.claude.com/docs/en/skills",
+    "purpose": "Skill-Ordner, Trigger und Laden",
+    "reliability": "official",
+    "limitations": "Version und Runtime-Fähigkeiten können sich ändern",
+    "confidence_default": 5,
+    "status": "verified_2026-10-20"
+  },
+  {
+    "id": "SRC-FOGG-001",
+    "type": "primary",
+    "title": "Fogg Behavior Model",
+    "url": "https://www.behaviormodel.org/",
+    "purpose": "Motivation, Ability, Prompt als Diagnosemodell",
+    "reliability": "model-author",
+    "limitations": "Kein Kausalnachweis bestimmter Website-Uplifts",
+    "confidence_default": 4,
+    "status": "verified_2026-10-20"
+  },
+  {
+    "id": "SRC-STAN-001",
+    "type": "primary",
+    "title": "Fogg et al. (2002) Web Credibility study",
+    "url": "https://credibility.stanford.edu/pdf/How_Do_People_Evaluate_a_Web_Site's_Credibility_v37.pdf",
+    "purpose": "46.1 Prozent aus Kommentar-Kodierung korrekt interpretieren",
+    "reliability": "original_report",
+    "limitations": "Altstudie 2002, keine Conversion-Kausalwirkung",
+    "confidence_default": 4,
+    "status": "verified_2026-10-20"
+  },
+  {
+    "id": "SRC-WCAG-001",
+    "type": "primary",
+    "title": "W3C WCAG 2.2",
+    "url": "https://www.w3.org/TR/WCAG22/",
+    "purpose": "Accessibility-Referenz",
+    "reliability": "normative_standard",
+    "limitations": "WCAG-Konformität allein beantwortet nicht sektorale Gesetzesanwendbarkeit",
+    "confidence_default": 5,
+    "status": "verified_2026-10-20"
+  },
+  {
+    "id": "SRC-WEBV-001",
+    "type": "primary",
+    "title": "Google Core Web Vitals docs",
+    "url": "https://developers.google.com/search/docs/appearance/core-web-vitals",
+    "purpose": "LCP INP CLS Messziele",
+    "reliability": "official_technical_docs",
+    "limitations": "Feldmessung und Conversion-Effekt nicht garantiert",
+    "confidence_default": 5,
+    "status": "verified_2026-10-20"
+  },
+  {
+    "id": "SRC-BAYM-001",
+    "type": "secondary",
+    "title": "Baymard Cart Abandonment Rate Statistics",
+    "url": "https://baymard.com/lists/cart-abandonment-rate",
+    "purpose": "Kontext Checkout-Hindernisse und Sample-Limitationen",
+    "reliability": "industry_research_synthesis",
+    "limitations": "Aggregierte heterogene Studien; keine lokale Branchen-Prognose",
+    "confidence_default": 4,
+    "status": "verified_2026-10-20"
+  },
+  {
+    "id": "SRC-BFSG-001",
+    "type": "primary",
+    "title": "BFSG §§ 1, 3",
+    "url": "https://www.gesetze-im-internet.de/bfsg/__3.html",
+    "purpose": "Ausnahme und Anwendungsgrenzen beachten",
+    "reliability": "official_law_text",
+    "limitations": "Einzelfallprüfung benötigt §1 und andere Normen",
+    "confidence_default": 5,
+    "status": "verified_2026-10-20"
+  },
+  {
+    "id": "SRC-DSA-001",
+    "type": "primary",
+    "title": "Digital Services Act, Art.25",
+    "url": "https://eur-lex.europa.eu/legal-content/DE-EN/TXT/?uri=CELEX:32022R2065",
+    "purpose": "Dark Patterns im konkret geltenden Plattformkontext",
+    "reliability": "official_eu_law",
+    "limitations": "Nicht jeder Websitebetreiber ist Online-Plattform nach DSA",
+    "confidence_default": 5,
+    "status": "verified_2026-10-20"
+  },
+  {
+    "id": "SRC-BAYM-FORMS-002",
+    "type": "secondary",
+    "title": "Baymard Checkout Optimization: Minimize Form Fields (2024)",
+    "url": "https://baymard.com/research-articles/checkout-flow-average-form-fields",
+    "purpose": "Spezifische UI-Friktion im E-Commerce; Fokus auf relevante Feldanzahl statt pauschalen Step-Count",
+    "reliability": "primary_industry_usability_observations",
+    "limitations": "Checkout-Kontext; kein kausaler Beweis für beliebige Lead-Formulare",
+    "confidence_default": 4,
+    "status": "verified_2026-10-20"
+  },
+  {
+    "id": "SRC-WAI-FORM-002",
+    "type": "primary",
+    "title": "W3C WAI Form Labels and Instructions",
+    "url": "https://www.w3.org/WAI/tutorials/forms/labels/",
+    "purpose": "Formularbeschriftung, Verständlichkeit und zugängliche Bedienung",
+    "reliability": "official_w3c_guidance",
+    "limitations": "Keine direkte Aussage zu Conversion-Steigerungsraten",
+    "confidence_default": 5,
+    "status": "verified_2026-10-20"
+  },
+  {
+    "id": "SRC-MS-SRM-003",
+    "type": "primary",
+    "title": "Microsoft Research: Diagnosing Sample Ratio Mismatch in A/B Testing (2020)",
+    "url": "https://www.microsoft.com/en-us/research/articles/diagnosing-sample-ratio-mismatch-in-a-b-testing/",
+    "purpose": "SRM und Vertrauenswürdigkeit von randomisierten CRO-Experimenten",
+    "reliability": "first_party_experimentation_research",
+    "limitations": "SRM-Prüfung allein garantiert noch keinen korrekten kausalen Schluss",
+    "confidence_default": 4,
+    "status": "verified_2026-10-20"
+  },
+  {
+    "id": "SRC-PLAY-NET-004",
+    "type": "primary",
+    "title": "Playwright Python Network Interception",
+    "url": "https://playwright.dev/python/docs/network",
+    "purpose": "Request-Routing, abort/fulfill and redirect limitations",
+    "reliability": "official",
+    "limitations": "Browser/network routing is not a hardened network sandbox; GET may have side effects",
+    "confidence_default": 5,
+    "status": "verified_2026-10-20"
+  },
+  {
+    "id": "SRC-PLAY-CTX-005",
+    "type": "primary",
+    "title": "Playwright BrowserContext WebSocket Routing",
+    "url": "https://playwright.dev/python/docs/api/class-browsercontext",
+    "purpose": "WebSocket blocking and browser contexts",
+    "reliability": "official",
+    "limitations": "WebSocket route introduced v1.48, requires compatible runtime",
+    "confidence_default": 5,
+    "status": "verified_2026-10-20"
+  },
+  {
+    "id": "DERIVED-BROWSER-001",
+    "type": "derived",
+    "title": "Optional browser-ux adapter implementation",
+    "url": "scripts/browser_ux_audit.py",
+    "purpose": "Bounded observational UX observations",
+    "reliability": "project-code-tested-only",
+    "limitations": "Not a proof of conversion, legal compliance or security isolation",
+    "confidence_default": 3,
+    "status": "static_and_synthetic_tests_only"
+  }
+]

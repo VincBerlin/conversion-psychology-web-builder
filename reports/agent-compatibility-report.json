@@ -1,0 +1,20 @@
+{
+  "target_runtime": "Claude Code",
+  "agent_agnostic_ready": "INSTRUCTIONS_AND_REFERENCES_ONLY",
+  "tested_runtimes": [],
+  "runtime_specific_components": [
+    "agents/openai.yaml"
+  ],
+  "primary_entrypoint": "SKILL.md",
+  "not_guaranteed": [
+    "tool availability",
+    "UI install",
+    "frontend prompt",
+    "browser availability",
+    "filesystem permissions",
+    "identical cross-agent outputs"
+  ],
+  "claude_notes": "Unzip skill directory into .claude/skills or ~/.claude/skills and invoke explicitly. An actual Claude Code smoke test is outstanding.",
+  "browser_adapter_runtime": "Python Playwright >=1.48, Chromium optional; requires manual install and authorized target URL",
+  "browser_network_e2e": "NOT_TESTED_ENV_POLICY"
+}

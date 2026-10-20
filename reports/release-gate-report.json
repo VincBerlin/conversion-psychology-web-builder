@@ -1,0 +1,89 @@
+{
+  "skill_name": "conversion-psychology-web-builder",
+  "mode": "UPDATE",
+  "architecture_gate": {
+    "status": "PASS_WITH_ASSUMPTIONS",
+    "chosen": "existing Claude Code skill + one optional bounded Python Playwright observational adapter and progressively disclosed browser reference",
+    "alternatives": [
+      "Browser MCP alone (rejected: inconsistent permissions and less reproducible, MCP optional later)",
+      "full-page crawler (rejected: excessive scope and side effects)",
+      "no browser adapter (rejected: no rendered viewport observation)"
+    ],
+    "rationale": "Bottleneck-first routing and explicit zero-change outcome give a compact, contextual workflow.",
+    "strongest_counterargument": "JavaScript and GET can still have effects, and browser network routing cannot replace container network isolation. Only public/staging authorized targets; real network smoke blocked by current runner policy."
+  },
+  "release_gate": {
+    "status": "PASS",
+    "allowed_to_package": true,
+    "scope": "static_artifact_release_only",
+    "browser_network_e2e": "NOT_TESTED_ENVIRONMENT_ADMIN_BLOCK"
+  },
+  "craftsmanship_gate": {
+    "status": "PASS",
+    "scope_and_disclosure": "preserved four modes, existing decision engine and spec; opt-in browser reference/scripts only when requested",
+    "failure_mode_chain": "arbitrary remote browsing -> GET or JS side effects, leaked content, unapproved scope -> mitigated by localhost default, explicit HTTPS opt-in, no clicks, method/origin/redirect/WebSocket blocks, no session profile and NOT_TESTED where interactions needed"
+  },
+  "anti_confabulation_gate": {
+    "status": "PASS",
+    "blocked_claims": [],
+    "corrections": [
+      "No promised conversion uplift or fabricated psych effect score",
+      "SRM check documented using Microsoft Research (not claimed sufficient alone)",
+      "44px design preference kept distinct from WCAG minimum",
+      "Non-UI bottlenecks explicitly returned rather than disguised as UX",
+      "Validation reports explicitly limit conclusions to static evidence",
+      "No real URL audit or conversion uplift claimed; administrator-blocked live Chromium navigation explicitly recorded as NOT_TESTED"
+    ]
+  },
+  "security_gate": {
+    "status": "PASS",
+    "boundary": "Opt-in public or local staging, 3 paths maximum, unauthenticated incognito context, no third-party requests, network write/redirect/WebSocket blocks; not a sandbox, GET risks explicitly stated"
+  },
+  "anti_sycophancy": {
+    "score": 1,
+    "threshold": 3,
+    "status": "PASS",
+    "notes": "Does not promise an indispensable skill or guaranteed conversion increase; actively allows NO_CHANGE and RESEARCH_FIRST."
+  },
+  "bias_gate": {
+    "status": "PASS",
+    "remaining_risks": [
+      "Observer and selection bias during audit",
+      "WEIRD generalization from UX research",
+      "Domain transfer from shopping research to high-consideration B2B",
+      "Confirmation bias from focusing only on chosen bottleneck; mitigated by strongest alternative explanation",
+      "Self-reported user research quality may be low",
+      "Automated DOM heuristics cannot prove comprehensibility, persuasive effectiveness, or usability for disabled users"
+    ]
+  },
+  "eval_gate": {
+    "status": "PASS",
+    "scope": "27/27 existing policy fixtures and 9 static validators plus browser policy/synthetic tests; network localhost navigation blocked by runtime admin policy"
+  },
+  "runtime_acceptance": "BROWSER_NETWORK_NOT_TESTED",
+  "assumptions": [
+    "Python 3 used only for optional local tests",
+    "Claude Code custom skills loaded from skill folder according to checked official docs",
+    "No target client website, permissions, analytics or controlled A/B experiment provided"
+  ],
+  "corrections_applied": true,
+  "missing_optional": [
+    "02_Conversion-Playbook_Mechanismen.md",
+    "03_Agent-Briefing_und_Page-Blueprints.md"
+  ],
+  "source_needed": [
+    "Authenticated site data and genuine customer proof",
+    "Client-specific legal review for commerce/consent",
+    "Actual before-after or randomized test to claim uplift",
+    "Real Claude Code runtime with Playwright and an authorized staging URL for network E2E and user-path QA"
+  ],
+  "known_limits": [
+    "No real Claude Code runtime tests",
+    "No browser/website usability testing performed",
+    "Schema validator does not validate external marketing claims or legal compliance",
+    "Browser routing has no absolute read-only guarantee; GET JS side effects possible",
+    "CDN cross-origin resources blocked may differ from public site appearance",
+    "No interaction click/submit/checkout coverage in observational adapter",
+    "Chromium localhost network smoke blocked by current runner admin policy"
+  ]
+}

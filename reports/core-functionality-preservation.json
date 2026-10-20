@@ -1,0 +1,73 @@
+{
+  "mode": "UPDATE",
+  "prior_skill_parity": "PRESERVED_STATIC_SCOPE",
+  "core_behavior_change": false,
+  "core_invariants": [
+    "read_existing_repo",
+    "brief_before_build",
+    "adaptive_decision_blueprint",
+    "verified_claims_only",
+    "dark_pattern_block",
+    "permission_boundary",
+    "conversion_metrics_and_guardrails",
+    "accessibility_and_qa",
+    "no_unmeasured_uplift"
+  ],
+  "portability": "instructions_only",
+  "runtime_parity": "NOT_TESTED",
+  "notes": "Static contract preservation supported by original fixture regression; Claude runtime output parity not established.",
+  "baseline_zip_sha256": "ea3bd6cb5fc4d1e1aebe5be69bade7b2bb947500aa3d7ce059cad7f43e97def5",
+  "claude_runtime_parity": "NOT_TESTED",
+  "minimal_additions": [
+    "evidence-first bottleneck and alternative-explanation routing",
+    "NO_CHANGE and RESEARCH_FIRST allowed outcomes",
+    "minimum-change contract with falsifier and rollback",
+    "v2 structured spec with 15 new adversarial fixtures",
+    "SRM and metric quality experiment checks",
+    "opt-in Playwright-rendered two-device, <=3-path observational browser audit",
+    "blocking non-GET/HEAD, third-party origins, redirects, WebSockets, service workers",
+    "screenshot and structured DOM evidence with NOT_TESTED for transactions and conversion impact",
+    "browser safety tests including real local Chromium DOM smoke and browser networking test pending environment"
+  ],
+  "preserved_core_functions": [
+    "intake and scope",
+    "repo inspection",
+    "four work modes",
+    "adaptive page blueprint",
+    "source and claim discipline",
+    "safety and permission gates",
+    "accessible responsive implementation",
+    "conversion instrumentation and guardrails",
+    "real-world QA with NOT_TESTED status",
+    "release validation packaging"
+  ],
+  "changed_files": [
+    "SKILL.md",
+    "README.md",
+    "references/design-spec-schema.md",
+    "references/measurement-experiments.md",
+    "references/source-map.json",
+    "references/source-map.md",
+    "references/eval-design.md",
+    "references/capability-parity-policy.md",
+    "scripts/validate_design_spec.py",
+    "scripts/validate_core_parity.py",
+    "reports/*",
+    "evals/*",
+    "references/security-and-tools.md",
+    "references/claude-code-installation.md"
+  ],
+  "added_files": [
+    "references/precision-decision-engine.md",
+    "references/behavioral-research-protocol.md",
+    "references/browser-ux-audit.md",
+    "scripts/browser_ux_audit.py",
+    "scripts/test_browser_ux_audit.py",
+    "scripts/validate_browser_adapter.py"
+  ],
+  "regression_status": "PASS_12_LEGACY_FIXTURES_BYTE_IDENTICAL_AND_PASS",
+  "baseline_input_zip_sha256": "ea3bd6cb5fc4d1e1aebe5be69bade7b2bb947500aa3d7ce059cad7f43e97def5",
+  "baseline_source": "current user-provided skill.zip of 70 files; earlier report referenced different v1 baseline",
+  "browser_mode": "OPT_IN_OBSERVATION",
+  "network_browser_e2e": "NOT_TESTED_ENVIRONMENT_ADMIN_BLOCK"
+}

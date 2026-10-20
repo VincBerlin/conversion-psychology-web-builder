@@ -1,0 +1,185 @@
+{
+  "skill": "conversion-psychology-web-builder",
+  "mode": "UPDATE",
+  "fixture_status": "PASS",
+  "fixture_count": 27,
+  "fixture_passed": 27,
+  "legacy_fixtures_regressed": 12,
+  "precision_fixtures_new": 15,
+  "trigger_eval_definitions": 15,
+  "output_eval_definitions": 12,
+  "trigger_runtime_execution": "NOT_RUN",
+  "output_runtime_execution": "NOT_RUN",
+  "claude_runtime_e2e": "NOT_RUN",
+  "website_e2e": "NOT_RUN",
+  "conversion_lift_measurement": "NOT_AVAILABLE",
+  "interpretation": "Local deterministic JSON schema and policy fixtures passed; neither real Claude Code behavior nor commercial conversion outcomes were tested. Optional browser script verified by policy tests and offline Chromium DOM rendering; localhost network smoke skipped because administrator network policy blocks browser navigation.",
+  "case_results": [
+    {
+      "id": "001-valid-b2b",
+      "expected": "PASS",
+      "actual": "PASS",
+      "passed": true
+    },
+    {
+      "id": "002-valid-real-claim",
+      "expected": "PASS",
+      "actual": "PASS",
+      "passed": true
+    },
+    {
+      "id": "003-block-unsupported-claim",
+      "expected": "BLOCK",
+      "actual": "BLOCK",
+      "passed": true
+    },
+    {
+      "id": "004-block-fake-timer",
+      "expected": "BLOCK",
+      "actual": "BLOCK",
+      "passed": true
+    },
+    {
+      "id": "005-block-scarcity-without-source",
+      "expected": "BLOCK",
+      "actual": "BLOCK",
+      "passed": true
+    },
+    {
+      "id": "006-block-preselected-consent",
+      "expected": "BLOCK",
+      "actual": "BLOCK",
+      "passed": true
+    },
+    {
+      "id": "007-block-missing-cta",
+      "expected": "BLOCK",
+      "actual": "BLOCK",
+      "passed": true
+    },
+    {
+      "id": "008-block-unrecognized-decision",
+      "expected": "BLOCK",
+      "actual": "BLOCK",
+      "passed": true
+    },
+    {
+      "id": "009-valid-private-hypothesis",
+      "expected": "PASS",
+      "actual": "PASS",
+      "passed": true
+    },
+    {
+      "id": "010-block-countdown-expiry",
+      "expected": "BLOCK",
+      "actual": "BLOCK",
+      "passed": true
+    },
+    {
+      "id": "011-block-paid-extra",
+      "expected": "BLOCK",
+      "actual": "BLOCK",
+      "passed": true
+    },
+    {
+      "id": "012-valid-expiring-offer",
+      "expected": "PASS",
+      "actual": "PASS",
+      "passed": true
+    },
+    {
+      "id": "013-pass-precision-v2-minimal",
+      "expected": "PASS",
+      "actual": "PASS",
+      "passed": true
+    },
+    {
+      "id": "014-pass-precision-v2-explicit-hypothesis",
+      "expected": "PASS",
+      "actual": "PASS",
+      "passed": true
+    },
+    {
+      "id": "015-pass-no-change",
+      "expected": "PASS",
+      "actual": "PASS",
+      "passed": true
+    },
+    {
+      "id": "016-pass-research-first",
+      "expected": "PASS",
+      "actual": "PASS",
+      "passed": true
+    },
+    {
+      "id": "017-block-no-counterhypothesis",
+      "expected": "BLOCK",
+      "actual": "BLOCK",
+      "passed": true
+    },
+    {
+      "id": "018-block-intervention-overload",
+      "expected": "BLOCK",
+      "actual": "BLOCK",
+      "passed": true
+    },
+    {
+      "id": "019-block-no-change-must-not-build",
+      "expected": "BLOCK",
+      "actual": "BLOCK",
+      "passed": true
+    },
+    {
+      "id": "020-block-unknown-evidence-experiment",
+      "expected": "BLOCK",
+      "actual": "BLOCK",
+      "passed": true
+    },
+    {
+      "id": "021-block-no-validation-plan",
+      "expected": "BLOCK",
+      "actual": "BLOCK",
+      "passed": true
+    },
+    {
+      "id": "022-block-unknown-pattern",
+      "expected": "BLOCK",
+      "actual": "BLOCK",
+      "passed": true
+    },
+    {
+      "id": "023-block-no-falsifier",
+      "expected": "BLOCK",
+      "actual": "BLOCK",
+      "passed": true
+    },
+    {
+      "id": "024-block-vanity-metric",
+      "expected": "BLOCK",
+      "actual": "BLOCK",
+      "passed": true
+    },
+    {
+      "id": "025-block-empty-build",
+      "expected": "BLOCK",
+      "actual": "BLOCK",
+      "passed": true
+    },
+    {
+      "id": "026-block-unknown-schema-version",
+      "expected": "BLOCK",
+      "actual": "BLOCK",
+      "passed": true
+    },
+    {
+      "id": "027-block-fake-social-proof",
+      "expected": "BLOCK",
+      "actual": "BLOCK",
+      "passed": true
+    }
+  ],
+  "browser_static_policy_test_results": "5/5 PASS",
+  "browser_synthetic_render_test_results": "1/1 PASS in Chromium without network",
+  "browser_network_smoke_test": "SKIPPED_ADMIN_BLOCKED",
+  "browser_target_site_test": "NOT_RUN_NO_TARGET"
+}

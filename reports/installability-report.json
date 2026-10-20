@@ -1,0 +1,21 @@
+{
+  "artifact_name": "skill.zip",
+  "claude_code_project_install_ready": true,
+  "frontend_install_suggestion_status": "not_controlled_by_skill",
+  "not_controlled_by_skill": [
+    "Claude Code local permissions",
+    "user filesystem",
+    "execution environment",
+    "host frontend UI",
+    "tool/plugin availability"
+  ],
+  "blocking_issues": [],
+  "user_action": "Unzip; place folder conversion-psychology-web-builder under .claude/skills/ (project) or ~/.claude/skills/ (global); launch /conversion-psychology-web-builder.",
+  "optional_browser_requirements": [
+    "Python 3",
+    "playwright>=1.48",
+    "Chromium",
+    "authorized local/staging URL"
+  ],
+  "browser_installation_is_optional": true
+}
